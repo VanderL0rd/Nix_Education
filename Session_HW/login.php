@@ -4,8 +4,8 @@ class SessWrapper
 {
     public function SessStart($sess_id = null)
     {
-        echo $sess_id . '<br>';
-        session_id($sess_id);
+        if (isset($sess_id))
+            session_id($sess_id);
         session_start();
         return session_id();
     }
